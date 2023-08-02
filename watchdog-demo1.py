@@ -27,9 +27,9 @@ if __name__=="__main__":
     # 创建一个观察者对象
     observer = Observer()
     # 设置观察者对象监控当前目录下的所有 py 文件，添加处理器
-    #observer.schedule(ReloadHandler(), path=".", recursive=False, patterns=["*.py"])
     observer.schedule(ReloadHandler(), path=".", recursive=True)
     # 启动观察者对象
     observer.start()
     a.A().start()
+    print("修改a.py,c.py可以观察效果")
     observer.join()
